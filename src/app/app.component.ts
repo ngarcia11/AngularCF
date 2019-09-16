@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CursoCF';
+
+  userSubscribed(){
+    console.log("El usuario se Suscribió");
+  }
 }

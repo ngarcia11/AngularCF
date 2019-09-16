@@ -1,0 +1,31 @@
+<h1>Curso Angular</h1>
+<p *ngIf="!isAvailable; else available">Lanzamiento: 28 Sep 2019</p>
+<ng-template #available>
+    <span class="highlight">Cursos Disponible</span>
+</ng-template>
+<div class="category" [ngSwitch]="category">
+<span *ngSwitchCase="'Web'">Desarrollo Web</span>
+<span *ngSwitchCase="'mobile'">Desarrollo Móvil</span>
+<span *ngSwitchCase="'other'">Desarrollo General</span>
+<span *ngSwitchDefault>No Especificado</span>
+</div>
+
+<h3>Tutor: {{name}}</h3>
+<div>
+ <a (click)="toggleMoreInformation()">Más Información <i class="fa " [class.fa-chevron-circle-down]="!moreInformation"
+    [class.fa-chevron-circle-up]="moreInformation"></i> </a>
+ <p *ngIf="moreInformation">
+     Este es un curso de Angular con duración de 3 horasen el que aprenderas temas como Componentes,
+     Servicios, animaciones, Módulos, fundamentos de framework y mucho más.
+ </p>
+</div>
+<!--
+<p *ngIf="!isAvailable; else available">Lanzamiento: 28 Sep 2019</p>
+-->
+
+<ul>
+    <li *ngFor="let top of topics; index as posicion">{{posicion+1}}. - {{top}}</li>
+    
+</ul>
+<div>
+            <button [disabled]="!isAvailable || !subscribed" [ngClass]="{activate: isAvailable && , shadow: !isAvailable}" type="button" name="button" >Inscribir</button>
