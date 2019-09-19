@@ -1,7 +1,7 @@
 <div class="dark">
 <app-full-screen>
-  <app-tittle [subscribed]="false"></app-tittle>
-<app-user-card (subscribed)="userSubscribed()"></app-user-card>
+  <app-tittle [subscribed]="userSubscribed"></app-tittle>
+<app-user-card (subscribed)="subscriptionChanged($event)"></app-user-card>
 </app-full-screen>
 </div>
 

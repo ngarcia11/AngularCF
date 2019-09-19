@@ -9,17 +9,22 @@ export class TittleComponent implements OnInit {
   public name: string;
   public edad: number;
   public edades: number[];
-  public isAvailable : boolean = true;
+  public isAvailable : boolean = false;
   public moreInformation : boolean = false;
   public category: string; //Mobile, Web, Others
   public topics: string[];
-
-  @Input() subscribe: boolean;
+  public price: number;
+  public seconds : number;
+  public launchDate: Date;
+  @Input() subscribed: boolean;
   constructor() { }
 
   ngOnInit() {
   this.name = 'Norlan';
   this.edad = 21;
+  this.launchDate = new Date(2019,10,21);
+  this.price = 25;
+  this.seconds = 3600;
   this.category = 'Web';
   this.topics = [
   'Fundamentos del Framework',
@@ -37,7 +42,7 @@ export class TittleComponent implements OnInit {
   }
 
   getDatos() : string  {
-  return '${this.name} : ${this.edad}';
+  return `${this.name} : ${this.edad}`;
   }
 
   toggleMoreInformation(){

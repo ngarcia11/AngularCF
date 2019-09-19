@@ -50,7 +50,7 @@ background-color: rgb(50, 50, 200);
     box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.2);
 }
 
-button:not(.activate){
+button:not(.active){
     opacity: 0.56;
     color: black;
 }
